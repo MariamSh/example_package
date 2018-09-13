@@ -3,7 +3,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--host", default="127.0.0.1")
-parser.add_argument("--port", default="94000", type=int)
+parser.add_argument("--port", default="28000", type=int)
 parser.add_argument("--debug", default="0", type=int)
 
 
@@ -22,7 +22,6 @@ class Service:
 
     def run(self):
         try:
-            print self.args.port
             self.app.run(host=self.args.host, port=self.args.port, debug=self.args.debug != 0)
         except KeyboardInterrupt:
             exit(1)
