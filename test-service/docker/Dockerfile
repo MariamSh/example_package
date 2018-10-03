@@ -12,9 +12,10 @@ RUN mkdir /app/source_code
 RUN mkdir /app/logs
 
 COPY . /app/source_code/
+RUN ls
 
 ENV PYTHONPATH "&{PYTHONPATH}:/app/source_code"
 
 EXPOSE 64000
 
-CMD ["/bin/bash", "-i", "-c", "/usr/bin/python -u http_test.py --host 0.0.0.0 --port 64000 >> /app/logs/test.log"]
+CMD ["/bin/bash", "-i", "-c", "/usr/bin/python -u /source_code/test-service/http_test.py --host 0.0.0.0 --port 64000 >> /app/logs/test.log"]
