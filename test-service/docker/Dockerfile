@@ -12,7 +12,7 @@ RUN mkdir /app/source_code
 RUN mkdir /app/logs
 
 COPY . /app/source_code/
-RUN ls
+RUN ls /app/source_code/
 
 ENV PYTHONPATH "&{PYTHONPATH}:/app/source_code"
 
