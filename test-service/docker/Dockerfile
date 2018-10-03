@@ -11,6 +11,7 @@ WORKDIR /app
 RUN mkdir /app/source_code
 RUN mkdir /app/logs
 
+RUN ls
 COPY ./test-service /app/source_code/
 
 ENV PYTHONPATH "&{PYTHONPATH}:/app/source_code"
