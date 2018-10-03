@@ -1,8 +1,15 @@
 FROM ubuntu:latest
 
-RUN echo 'Hello, world!'
+RUN mkdir /app
+RUN mkdir /var/log/test_service/
 
-EXPOSE 64001
+WORKDIR /app
 
-CMD ["/bin/bash", "-l"]
+RUN mkdir /app/source_code
+
+COPY ./test-service/ /app/source_code/
+
+ENV PYTHONPATH "&{PYTHONPATH}:/app/source_code"
+
+EXPOSE 64000
 
