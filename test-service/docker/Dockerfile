@@ -18,4 +18,3 @@ ENV PYTHONPATH "&{PYTHONPATH}:/app/source_code"
 
 EXPOSE 64000
 
-CMD ["/bin/bash", "-i", "-c", "/usr/bin/python -u /app/source_code/test-service/http_test.py --host 0.0.0.0 --port 64000 >> /app/logs/test.log"]
